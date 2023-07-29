@@ -9,7 +9,9 @@ services:
       gradle clean
       &&
       gradle build
-      && 
+      &&
+      gradle wrapper
+      &&  
       ./gradlew test
       &&
       ./gradlew run
