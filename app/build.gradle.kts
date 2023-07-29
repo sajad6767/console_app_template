@@ -18,6 +18,8 @@ repositories {
 dependencies {
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:7.5")
+    testImplementation("io.cucumber:cucumber-java:7.13.0")
+    testImplementation("io.cucumber:cucumber-testng:7.13.0")
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:31.1-jre")
@@ -38,4 +40,7 @@ application {
 tasks.named<Test>("test") {
     // Use TestNG for unit tests.
     useTestNG()
+     testLogging {
+        events("passed","skipped","failed")
+    }
 }
