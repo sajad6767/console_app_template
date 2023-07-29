@@ -37,10 +37,14 @@ application {
     mainClass.set("com.chackavack.App")
 }
 
-tasks.named<Test>("test") {
+
+
+tasks.test{
     // Use TestNG for unit tests.
-    useTestNG()
-     testLogging {
+    useTestNG(){
+        // testLogging.showStandardStreams = true
+    }
+    testLogging {
         events("passed","skipped","failed")
     }
 }
